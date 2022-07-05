@@ -23,7 +23,7 @@ window.print();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Student  Information</title>
+<title>Panneau  Information</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <link href="hostel.css" rel="stylesheet" type="text/css">
 </head>
@@ -31,7 +31,7 @@ window.print();
 <body>
 <table width="100%" border="0">
 <?php 
-		 $ret= mysql_query("SELECT * FROM registration where id = '".$_GET['id']."'");
+		 $ret= mysql_query("SELECT * FROM PANNEAU where id = '".$_GET['id']."'");
 			while($row=mysql_fetch_array($ret))
 			{
 			?>

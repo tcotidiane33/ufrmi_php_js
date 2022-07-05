@@ -40,7 +40,12 @@
  const btnTreg = document.querySelector(".myBtnTreg");
 
 
- btnCli.onclick = ()=>{
+ btnCli.onclick = ()=>{	
+	console.log("echo client ..");
+	location.href = "client.php";
+
+} s
+btnCli.onclick = ()=>{	
 	console.log("echo client ..");
 	location.href = "client.php";
 
@@ -77,3 +82,7 @@ btnTreg.onclick = ()=>{
 	location.href = "typereglement.php";
 
 }
+
+ 
+
+

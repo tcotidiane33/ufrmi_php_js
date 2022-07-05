@@ -67,7 +67,7 @@ if (isset($_POST['submit']))
 													.<div class="form-group form-body">
 														<div class="form-group form-submit row">
 															<div class="offset-sm-2 col-sm-10 form-content">
-																<button type="submit" class="btn myBtnCli btn-primary">CLIENT</button>
+																<button type="submit" class="btn myBtnCli btn-primary" id="myBtnCli">CLIENT</button>
 															</div>
 														</div>
 														<div class="form-group form-submit row">

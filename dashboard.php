@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('includes/config.php');
-include('includes/checklogin.php');
-check_login();
+// include('includes/checklogin.php');
+// check_login();
 
 ?>
 <!doctype html>
@@ -77,9 +77,6 @@ check_login();
 						</div>
 
 
-
-
-
 					</div>
 				</div>
 
@@ -125,7 +122,7 @@ check_login();
 </body>
 
 <div class="foot"><footer>
-<p> Brought To You By <a href="https://code-projects.org/">Code-Projects</p>
+<p> Brought To You By <a href="https://github.com/tcotidiane33">EUREKA DOJO</p>
 </footer> </div>
 
 

@@ -30,3 +30,15 @@
 	});
 
  });
+
+
+
+ //  /login page admin without control
+const btnLog = document.querySelector(".form-login .myBtnLog");
+
+// log
+btnLog.onclick =()=>{
+	console.log("echo page admin is open");
+	location.href = "admin-profile.php";
+	// alert('echo reply...');
+}

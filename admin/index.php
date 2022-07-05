@@ -25,7 +25,8 @@ if (isset($_POST['login'])) {
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-</head <body>
+</head >
+<body>
 
 <div class="login-page bk-img" style="background-image: url(img/login-bg.jpg);">
 	<div class="form-content">

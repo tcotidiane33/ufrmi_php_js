@@ -1,11 +1,10 @@
 <?php
 session_start();
 include('includes/config.php');
-if(isset($_POST['submit']))
-{
+if (isset($_POST['submit'])) {
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		//recuperation et verification des donnees
-		if ((!empty($_POST['numcli'])) ||(!empty($_POST['rs'])) || (!empty($_POST['telcli'])) || (!empty($_POST['apc'])) || (!empty($_POST['email'])) || (!empty($_POST['cocom']))) {
+		if ((!empty($_POST['numcli'])) || (!empty($_POST['rs'])) || (!empty($_POST['telcli'])) || (!empty($_POST['apc'])) || (!empty($_POST['email'])) || (!empty($_POST['cocom']))) {
 
 			//nettoyage des donnees
 			$numcli = htmlspecialchars($_POST['numcli']);
@@ -16,10 +15,11 @@ if(isset($_POST['submit']))
 			$email = htmlspecialchars($_POST['email']);
 
 			//preparation de la requette d'insertion
-			$insert = $conn->prepare('INSERT INTO CLIENT(NUMCLI,CODECOM,RAISONSOCIALECLI,TELCLI,ADRESSEPOSTALECLI,EMAILCLI) VALUES(?,?,?,?,?,?)');
+			$insert = $conn->prepare('INSERT INTO CLIENT(NUMCLI,CODECOM,RAISONSOCIALECLI,TELCLI,ADRESSEPOSTALECLI,EMAILCLI) 
+										VALUES(?,?,?,?,?,?)');
 
 			//Execution de la requette      
-			$insert->execute(array($numcli,$codecom,$rs,$telcli, $addr, $email));
+			$insert->execute(array($numcli, $codecom, $rs, $telcli, $addr, $email));
 			echo "<script>alert('Client Succssfully register');</script>";
 		} else {
 			$errorMsg = "Veuillez renseigner le champs svp !";
@@ -33,6 +33,7 @@ if(isset($_POST['submit']))
 
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,23 +50,24 @@ if(isset($_POST['submit']))
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
-<script type="text/javascript" src="js/validation.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript">
+	<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
+	<script type="text/javascript" src="js/validation.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript">
 
-</script>
+	</script>
 </head>
+
 <body>
-	<?php include('includes/header.php');?>
+	<?php include('includes/header.php'); ?>
 	<div class="ts-main-content">
-		<?php include('includes/sidebar.php');?>
+		<?php include('includes/sidebar.php'); ?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
 				<div class="row">
 					<div class="col-md-12">
-					
+
 						<h2 class="page-title">ENREGISTREMENT CLIENT </h2>
 
 						<div class="row">
@@ -73,83 +75,83 @@ if(isset($_POST['submit']))
 								<div class="panel panel-primary">
 									<div class="panel-heading">all Info</div>
 									<div class="panel-body">
-			<form method="post" action="" name="registration" class="form-horizontal" onSubmit="return valid();">
-											
-										
-
-<div class="form-group">
-<label class="col-sm-2 control-label"> Numero Client : </label>
-<div class="col-sm-8">
-<input type="number" name="numcli" id="numcli"  class="form-control" required="required" >
-</div>
-</div>
-
-<div class="form-group">
-<label class="col-sm-2 control-label"> Raison social : </label>
-<div class="col-sm-8">
-<input type="text" name="rs" id="rs"  class="form-control" required="required" >
-</div>
-</div>
+										<form method="post" action="" name="registration" class="form-horizontal" onSubmit="return valid();">
 
 
-<div class="form-group">
-<label class="col-sm-2 control-label">☎️ telephone client : </label>
-<div class="col-sm-8">
-<input type="text" name="telcli" id="telcli"  class="form-control" required="required" >
-</div>
-</div>
 
-<div class="form-group">
-<label class="col-sm-2 control-label">Address Postal Client : </label>
-<div class="col-sm-8">
-<input type="text" name="apc" id="apc"  class="form-control">
-</div>
-</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label"> Numero Client : </label>
+												<div class="col-sm-8">
+													<input type="number" name="numcli" id="numcli" class="form-control" required="required">
+												</div>
+											</div>
 
-<div class="form-group">
-<label class="col-sm-2 control-label">Email 🏤 : </label>
-<div class="col-sm-8">
-<input type="text" name="email" id="email"  class="form-control" required="required">
-</div>
-</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label"> Raison social : </label>
+												<div class="col-sm-8">
+													<input type="text" name="rs" id="rs" class="form-control" required="required">
+												</div>
+											</div>
 
-<div class="form-group">
-<label class="col-sm-2 control-label">Code 👩‍💻 commune : </label>
-<div class="col-sm-8">
-<select name="cocom" class="form-control" required="required">
-<option value="">Select code Commune</option>
-<option value="male">ABIDJAN02</option>
-<option value="male">ABIDJAN03</option>
-<option value="female">ABIDJAN01</option>
-<option value="others">Others</option>
-</select>
-</div>
-</div>
 
-<section class="voir_">
+											<div class="form-group">
+												<label class="col-sm-2 control-label">☎️ telephone client : </label>
+												<div class="col-sm-8">
+													<input type="text" name="telcli" id="telcli" class="form-control" required="required">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-2 control-label">Address Postal Client : </label>
+												<div class="col-sm-8">
+													<input type="text" name="apc" id="apc" class="form-control">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-2 control-label">Email 🏤 : </label>
+												<div class="col-sm-8">
+													<input type="text" name="email" id="email" class="form-control" required="required">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-2 control-label">Code 👩‍💻 commune : </label>
+												<div class="col-sm-8">
+													<select name="cocom" class="form-control" required="required">
+														<option value="">Select code Commune</option>
+														<option value="male">ABIDJAN02</option>
+														<option value="male">ABIDJAN03</option>
+														<option value="female">ABIDJAN01</option>
+														<option value="others">Others</option>
+													</select>
+												</div>
+											</div>
+
+											<section class="voir_">
 												<a href="command.php">Voir touts les Clients -></a>
 											</section>
 
 
 
 
-<div class="col-sm-6 col-sm-offset-4">
-<button class="btn btn-default" type="submit">Cancel</button>
-<input type="submit" name="submit" Value="Register" class="btn btn-primary">
-</div>
-</form>
+											<div class="col-sm-6 col-sm-offset-4">
+												<button class="btn btn-default" type="submit">Cancel</button>
+												<input type="submit" name="submit" Value="Register" class="btn btn-primary">
+											</div>
+										</form>
 
-									</div>
 									</div>
 								</div>
 							</div>
 						</div>
-							</div>
-						</div>
 					</div>
-				</div> 	
+				</div>
 			</div>
 		</div>
+	</div>
+	</div>
+	</div>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
@@ -161,25 +163,24 @@ if(isset($_POST['submit']))
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 </body>
-	<script>
-function checkAvailability() {
+<script>
+	function checkAvailability() {
 
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "check_availability.php",
-data:'emailid='+$("#email").val(),
-type: "POST",
-success:function(data){
-$("#user-availability-status").html(data);
-$("#loaderIcon").hide();
-},
-error:function ()
-{
-event.preventDefault();
-alert('error');
-}
-});
-}
+		$("#loaderIcon").show();
+		jQuery.ajax({
+			url: "check_availability.php",
+			data: 'email=' + $("#email").val(),
+			type: "POST",
+			success: function(data) {
+				$("#user-availability-status").html(data);
+				$("#loaderIcon").hide();
+			},
+			error: function() {
+				event.preventDefault();
+				alert('error');
+			}
+		});
+	}
 </script>
 
 </html>

@@ -44,7 +44,7 @@
 	console.log("echo client ..");
 	location.href = "client.php";
 
-} s
+} 
 btnCli.onclick = ()=>{	
 	console.log("echo client ..");
 	location.href = "client.php";
@@ -83,6 +83,16 @@ btnTreg.onclick = ()=>{
 
 }
 
+
+
+
+//  //  /login page admin without control
+ const btnLog = document.querySelector(".form-login .myBtnLog");
+
+ // log
+ btnLog.onclick =()=>{
+	 console.log("echo page admin is open");
+	 location.href = "/admin/admin-profile.php";
+	 // alert('echo reply...');
+ }
  
-
-

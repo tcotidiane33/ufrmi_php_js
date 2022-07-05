@@ -1,21 +1,31 @@
-<?php
+j<?php
 session_start();
 include('includes/config.php');
 if(isset($_POST['submit']))
 {
-$regno=$_POST['regno'];
-$fname=$_POST['fname'];
-$mname=$_POST['mname'];
-$lname=$_POST['lname'];
-$gender=$_POST['gender'];
-$contactno=$_POST['contact'];
-$emailid=$_POST['email'];
-$password=$_POST['password'];
-$query="insert into  userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
-$stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('sssssiss',$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
-$stmt->execute();
-echo"<script>alert('Student Succssfully register');</script>";
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		//recuperation et verification des donnees
+		if ((!empty($_POST['nuco'])) || (!empty($_POST['numfac'])) || (!empty($_POST['numcli'])) || (!empty($_POST['daco'])) || (!empty($_POST['panneau']))) {
+
+			//nettoyage des donnees
+			$numcontrat = htmlspecialchars($_POST['nuco']);
+			$numfac = htmlspecialchars($_POST['numfac']);
+			$numcli = htmlspecialchars($_POST['numcli']);
+			$datesign = htmlspecialchars($_POST['daco']);
+			$panneau = htmlspecialchars($_POST['panneau']);
+
+			//preparation de la requette d'insertion
+			$insert = $conn->prepare('INSERT INTO CONTRAT(NUMCONT,NUMFACT,NUMCLI,DATESIGNATURECONT,PANNEAU) VALUES(?,?,?,?,?)');
+
+			//Execution de la requette      
+			$insert->execute(array($numcontrat, $numfac, $numcli, $datesign, $panneau));
+			echo "<script>alert('Contrat Succssfully register');</script>";
+		} else {
+			$errorMsg = "Veuillez renseigner le champs svp !";
+			echo $errorMsg;
+		}
+	}
+
 }
 ?>
 
@@ -28,7 +38,7 @@ echo"<script>alert('Student Succssfully register');</script>";
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
-	<title>User Registration</title>
+	<title>Contrats Registration</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">>
@@ -85,7 +95,7 @@ return true;
 <div class="form-group">
 <label class="col-sm-2 control-label">Numero facture  : </label>
 <div class="col-sm-8">
-<select name="gender" class="form-control" required="required">
+<select name="numfac" class="form-control" required="required">
 <option value="">Select Num Facture</option>
 <option value="male">FACT23</option>
 <option value="female">Fact64</option>
@@ -98,7 +108,7 @@ return true;
 <div class="form-group">
 <label class="col-sm-2 control-label">Numero 🔢 client 👴: </label>
 <div class="col-sm-8">
-<select name="gender" class="form-control" required="required">
+<select name="numcli" class="form-control" required="required">
 <option value="">Select NUM CLIENT</option>
 <option value="male">client Alpha</option>
 <option value="female">client BIG</option>
@@ -118,7 +128,7 @@ return true;
 <div class="form-group">
 <label class="col-sm-2 control-label">Selectionner un Panneau  : </label>
 <div class="col-sm-8">
-<select name="gender" class="form-control" required="required">
+<select name="panneau" class="form-control" required="required">
 <option value="">Select PANNEAU</option>
 <option value="male">PAN2x2</option>
 <option value="female">PAN4x4</option>
@@ -127,7 +137,9 @@ return true;
 </div>
 </div>	
 
-
+<section class="voir_">
+												<a href="command.php">Voir touts les Contrats -></a>
+											</section>
 
 <div class="col-sm-6 col-sm-offset-4">
 <button class="btn btn-default" type="submit">Cancel</button>
@@ -158,24 +170,7 @@ return true;
 	<script src="js/main.js"></script>
 </body>
 	<script>
-function checkAvailability() {
 
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "check_availability.php",
-data:'emailid='+$("#email").val(),
-type: "POST",
-success:function(data){
-$("#user-availability-status").html(data);
-$("#loaderIcon").hide();
-},
-error:function ()
-{
-event.preventDefault();
-alert('error');
-}
-});
-}
 </script>
 
 </html>

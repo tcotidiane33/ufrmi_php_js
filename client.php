@@ -3,20 +3,32 @@ session_start();
 include('includes/config.php');
 if(isset($_POST['submit']))
 {
-$regno=$_POST['regno'];
-$fname=$_POST['fname'];
-$mname=$_POST['mname'];
-$lname=$_POST['lname'];
-$gender=$_POST['gender'];
-$contactno=$_POST['contact'];
-$emailid=$_POST['email'];
-$password=$_POST['password'];
-$query="insert into  userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
-$stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('sssssiss',$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
-$stmt->execute();
-echo"<script>alert('Student Succssfully register');</script>";
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		//recuperation et verification des donnees
+		if ((!empty($_POST['numcli'])) ||(!empty($_POST['rs'])) || (!empty($_POST['telcli'])) || (!empty($_POST['apc'])) || (!empty($_POST['email'])) || (!empty($_POST['cocom']))) {
+
+			//nettoyage des donnees
+			$numcli = htmlspecialchars($_POST['numcli']);
+			$codecom = htmlspecialchars($_POST['cocom']);
+			$rs = htmlspecialchars($_POST['rs']);
+			$telcli = htmlspecialchars($_POST['telcli']);
+			$addr = htmlspecialchars($_POST['apc']);
+			$email = htmlspecialchars($_POST['email']);
+
+			//preparation de la requette d'insertion
+			$insert = $conn->prepare('INSERT INTO CLIENT(NUMCLI,CODECOM,RAISONSOCIALECLI,TELCLI,ADRESSEPOSTALECLI,EMAILCLI) VALUES(?,?,?,?,?,?)');
+
+			//Execution de la requette      
+			$insert->execute(array($numcli,$codecom,$rs,$telcli, $addr, $email));
+			echo "<script>alert('Client Succssfully register');</script>";
+		} else {
+			$errorMsg = "Veuillez renseigner le champs svp !";
+			echo $errorMsg;
+		}
+	}
 }
+
+
 ?>
 
 <!doctype html>
@@ -28,7 +40,7 @@ echo"<script>alert('Student Succssfully register');</script>";
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
-	<title>User Registration</title>
+	<title>Client Registration</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">>
@@ -41,16 +53,7 @@ echo"<script>alert('Student Succssfully register');</script>";
 <script type="text/javascript" src="js/validation.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
-function valid()
-{
-if(document.registration.password.value!= document.registration.cpassword.value)
-{
-alert("Password and Re-Type Password Field do not match  !!");
-document.registration.cpassword.focus();
-return false;
-}
-return true;
-}
+
 </script>
 </head>
 <body>
@@ -73,6 +76,13 @@ return true;
 			<form method="post" action="" name="registration" class="form-horizontal" onSubmit="return valid();">
 											
 										
+
+<div class="form-group">
+<label class="col-sm-2 control-label"> Numero Client : </label>
+<div class="col-sm-8">
+<input type="number" name="numcli" id="numcli"  class="form-control" required="required" >
+</div>
+</div>
 
 <div class="form-group">
 <label class="col-sm-2 control-label"> Raison social : </label>
@@ -106,7 +116,7 @@ return true;
 <div class="form-group">
 <label class="col-sm-2 control-label">Code 👩‍💻 commune : </label>
 <div class="col-sm-8">
-<select name="gender" class="form-control" required="required">
+<select name="cocom" class="form-control" required="required">
 <option value="">Select code Commune</option>
 <option value="male">ABIDJAN02</option>
 <option value="male">ABIDJAN03</option>
@@ -116,7 +126,10 @@ return true;
 </div>
 </div>
 
-						
+<section class="voir_">
+												<a href="command.php">Voir touts les Clients -></a>
+											</section>
+
 
 
 

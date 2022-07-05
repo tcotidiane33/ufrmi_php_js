@@ -2,7 +2,29 @@
 session_start();
 include('includes/config.php');
 if (isset($_POST['submit'])) 
-{	$regno = $_POST['regno'];	$fname = $_POST['fname'];	$mname = $_POST['mname'];	$lname = $_POST['lname'];	$gender = $_POST['gender'];	$contactno = $_POST['contact'];	$emailid = $_POST['email'];	$password = $_POST['password'];	$query = "insert into  userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";	$stmt = $mysqli->prepare($query);	$rc = $stmt->bind_param('sssssiss', $regno, $fname, $mname, $lname, $gender, $contactno, $emailid, $password);	$stmt->execute();	echo "<script>alert('Student Succssfully register');</script>";
+{	
+	
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        //recuperation et verification des donnees
+        if((!empty($_POST['coco'])) || (!empty($_POST['lico']))) {
+
+            //nettoyage des donnees
+            $codecom = htmlspecialchars($_POST['coco']);
+            $libilecom = htmlspecialchars($_POST['lico']);
+
+            //preparation de la requette d'insertion
+            $insert = $conn->prepare('INSERT INTO commune(CODECOM,LIBELLECOM) VALUES(?, ?)');
+
+            //Execution de la requette      
+            $insert->execute(array($codecom, $libilecom));    
+
+            //redirection ver filiere.php
+            // header("location:filiere.php");
+        } else {
+            $errorMsg = "Veuillez renseigner le champs svp !";
+            echo $errorMsg;
+        }
+    }
 }
 ?>
 
@@ -15,7 +37,7 @@ if (isset($_POST['submit']))
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
-	<title>User Registration</title>
+	<title>Commune Registration</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">>
@@ -28,16 +50,7 @@ if (isset($_POST['submit']))
 <script type="text/javascript" src="js/validation.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
-function valid()
-{
-if(document.registration.password.value!= document.registration.cpassword.value)
-{
-alert("Password and Re-Type Password Field do not match  !!");
-document.registration.cpassword.focus();
-return false;
-}
-return true;
-}
+
 </script>
 </head>
 <body>
@@ -76,6 +89,9 @@ return true;
 </div>
 </div>
 
+<section class="voir_">
+												<a href="command.php">Voir touts les Communes -></a>
+											</section>
 
 <div class="col-sm-6 col-sm-offset-4">
 <button class="btn btn-default" type="submit">Cancel</button>
@@ -106,24 +122,7 @@ return true;
 	<script src="js/main.js"></script>
 </body>
 	<script>
-function checkAvailability() {
 
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "check_availability.php",
-data:'emailid='+$("#email").val(),
-type: "POST",
-success:function(data){
-$("#user-availability-status").html(data);
-$("#loaderIcon").hide();
-},
-error:function ()
-{
-event.preventDefault();
-alert('error');
-}
-});
-}
 </script>
 
 </html>

@@ -3,19 +3,28 @@ session_start();
 include('includes/config.php');
 if(isset($_POST['submit']))
 {
-$regno=$_POST['regno'];
-$fname=$_POST['fname'];
-$mname=$_POST['mname'];
-$lname=$_POST['lname'];
-$gender=$_POST['gender'];
-$contactno=$_POST['contact'];
-$emailid=$_POST['email'];
-$password=$_POST['password'];
-$query="insert into  userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
-$stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('sssssiss',$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
-$stmt->execute();
-echo"<script>alert('Student Succssfully register');</script>";
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+        //recuperation et verification des donnees
+        if((!empty($_POST['NUMFACT'])) || (!empty($_POST['DATEFACT']))) {
+
+            //nettoyage des donnees
+            $numfact = htmlspecialchars($_POST['NUMFACT']);
+            $datefact = htmlspecialchars($_POST['DATEFACT']);
+
+            //preparation de la requette d'insertion
+            $insert = $conn->prepare('INSERT INTO facture(NUMFACT,DATEFACT) VALUES(?, ?)');
+
+            //Execution de la requette      
+            $insert->execute(array($numfact, $datefact));    
+			echo"<script>alert('Student Succssfully register');</script>";
+
+            
+        } else {
+            $errorMsg = "Veuillez renseigner le champs svp !";
+            echo $errorMsg;
+        }
+    }
+
 }
 ?>
 
@@ -41,16 +50,7 @@ echo"<script>alert('Student Succssfully register');</script>";
 <script type="text/javascript" src="js/validation.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
-function valid()
-{
-if(document.registration.password.value!= document.registration.cpassword.value)
-{
-alert("Password and Re-Type Password Field do not match  !!");
-document.registration.cpassword.focus();
-return false;
-}
-return true;
-}
+
 </script>
 </head>
 <body>
@@ -70,7 +70,7 @@ return true;
 								<div class="panel panel-primary">
 									<div class="panel-heading"> all Info</div>
 									<div class="panel-body">
-			<form method="post" action="" name="registration" class="form-horizontal" onSubmit="return valid();">
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" name="registration" class="form-horizontal" onSubmit="return valid();">
 											
 										
 
@@ -83,15 +83,17 @@ return true;
 
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Libelle 🤔 facture: </label>
+<label class="col-sm-2 control-label">Date 🤔 facture: </label>
 <div class="col-sm-8">
-<input type="text" name="lifac" id="lifac"  class="form-control" required="required" >
+<input type="date" name="dafac" id="dafac"  class="form-control" required="required" >
 </div>
 </div>
 
 
 						
-
+<section class="voir_">
+        <a href="command.php">Voir touts les Factures -></a>
+    </section>
 
 
 <div class="col-sm-6 col-sm-offset-4">

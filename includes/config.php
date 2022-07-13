@@ -1,6 +1,6 @@
 <?php
-$dbuser="root";
-$dbpass="";
-$host="localhost";
-$db="panneau";
-$mysqli =new mysqli($host,$dbuser, $dbpass, $db);
+$dbuser = "root";
+$dbpass = "";
+$host = "localhost";
+$db = "ufrli";
+$mysqli = new mysqli($host, $dbuser, $dbpass, $db);

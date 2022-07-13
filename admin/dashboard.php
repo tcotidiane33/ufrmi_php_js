@@ -30,10 +30,10 @@ include('includes/config.php');
 </head>
 
 <body>
-<?php include("includes/header.php");?>
+	<?php include("includes/header.php"); ?>
 
 	<div class="ts-main-content">
-		<?php include("includes/sidebar.php");?>
+		<?php include("includes/sidebar.php"); ?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
@@ -45,65 +45,7 @@ include('includes/config.php');
 						<div class="row">
 							<div class="col-md-12">
 								<div class="row">
-									<div class="col-md-3">
-										<div class="panel panel-default">
-											<div class="panel-body bk-primary text-light">
-												<div class="stat-panel text-center">
 
-<?php
-$result ="SELECT count(*) FROM registration ";
-$stmt = $mysqli->prepare($result);
-$stmt->execute();
-$stmt->bind_result($count);
-$stmt->fetch();
-$stmt->close();
-?>
-
-													<div class="stat-panel-number h1 "><?php echo $count;?></div>
-													<div class="stat-panel-title text-uppercase"> Students</div>
-												</div>
-											</div>
-											<a href="manage-students.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="panel panel-default">
-											<div class="panel-body bk-success text-light">
-												<div class="stat-panel text-center">
-<?php
-$result1 ="SELECT count(*) FROM rooms ";
-$stmt1 = $mysqli->prepare($result1);
-$stmt1->execute();
-$stmt1->bind_result($count1);
-$stmt1->fetch();
-$stmt1->close();
-?>
-													<div class="stat-panel-number h1 "><?php echo $count1;?></div>
-													<div class="stat-panel-title text-uppercase">Total Rooms </div>
-												</div>
-											</div>
-											<a href="manage-rooms.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="panel panel-default">
-											<div class="panel-body bk-info text-light">
-												<div class="stat-panel text-center">
-<?php
-$result2 ="SELECT count(*) FROM courses ";
-$stmt2 = $mysqli->prepare($result2);
-$stmt2->execute();
-$stmt2->bind_result($count2);
-$stmt2->fetch();
-$stmt2->close();
-?>
-													<div class="stat-panel-number h1 "><?php echo $count2;?></div>
-													<div class="stat-panel-title text-uppercase">Total Courses</div>
-												</div>
-											</div>
-											<a href="manage-courses.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
-										</div>
-									</div>
 
 								</div>
 							</div>
@@ -132,36 +74,46 @@ $stmt2->close();
 	<script src="js/main.js"></script>
 
 	<script>
+		window.onload = function() {
 
-	window.onload = function(){
+			// Line chart from swirlData for dashReport
+			var ctx = document.getElementById("dashReport").getContext("2d");
+			window.myLine = new Chart(ctx).Line(swirlData, {
+				responsive: true,
+				scaleShowVerticalLines: false,
+				scaleBeginAtZero: true,
+				multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+			});
 
-		// Line chart from swirlData for dashReport
-		var ctx = document.getElementById("dashReport").getContext("2d");
-		window.myLine = new Chart(ctx).Line(swirlData, {
-			responsive: true,
-			scaleShowVerticalLines: false,
-			scaleBeginAtZero : true,
-			multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-		});
+			// Pie Chart from doughutData
+			var doctx = document.getElementById("chart-area3").getContext("2d");
+			window.myDoughnut = new Chart(doctx).Pie(doughnutData, {
+				responsive: true
+			});
 
-		// Pie Chart from doughutData
-		var doctx = document.getElementById("chart-area3").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Pie(doughnutData, {responsive : true});
+			// Dougnut Chart from doughnutData
+			var doctx = document.getElementById("chart-area4").getContext("2d");
+			window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {
+				responsive: true
+			});
 
-		// Dougnut Chart from doughnutData
-		var doctx = document.getElementById("chart-area4").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {responsive : true});
-
-	}
+		}
 	</script>
 
 </body>
 
-<div class="foot"><footer>
-<p> Brought To You By <a href="https://code-projects.org/">Code-Projects</p>
-</footer> </div>
+<div class="foot">
+	<footer>
+		<p> Brought To You By <a href="https://code-projects.org/">Code-Projects</p>
+	</footer>
+</div>
 
 
-<style> .foot{text-align: center; border: 1px solid black;}</style>
+<style>
+	.foot {
+		text-align: center;
+		border: 1px solid black;
+	}
+</style>
 
 </html>

@@ -44,13 +44,14 @@ include('includes/config.php');
     <!-- START MODAL  -->
     <!-- END modal login area  -->
     <a href="index.php">
-        
-    <button class="btn btn-dark btn-outline-light">Home</button>
+
+        <button class="btn btn-dark btn-outline-light">Home</button>
     </a>
     <!-- START BANNER  -->
     <section class="section">
         <div class="banner promotion background">
-            <h3 class="up "><big><strong class="strong ">UFR MI</strong></big><h1 class="big"> GALERIE </h1>
+            <h3 class="up "><big><strong class="strong ">UFR MI</strong></big>
+                <h1 class="big"> GALERIE </h1>
             </h3>
             <h3 class="cookie " id="target_galerie"></h3>
         </div>
@@ -58,49 +59,49 @@ include('includes/config.php');
     </section>
     <!-- END BANNER -->
     <!-- START SECTION  -->
-            <!-- start section 1  -->
-            <section class="section_art">
-                <div class="container container_illustra_1">
-                    <div class="container-fluid illustra_1">
-                        
-                    </div>                  
-                    <div class="container-fluid">
-                        
-                          <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
-                    </div>
-                </div>
-            </section>
+    <!-- start section 1  -->
+    <section class="section_art">
+        <div class="container container_illustra_1">
+            <div class="container-fluid illustra_1">
 
-            <!-- start SECTION INFO   -->
-            <section class="section_info">
-                <div class="container container_illustra_2">
-                    <div class="container-fluid" style="background-color: #ff0000; color:blue;">
-                        <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
-                        
-                    </div>
-                    <div class="container-fluid illustra_2">
-                        
-                    </div>                  
-                </div>
-            </section>
+            </div>
+            <div class="container-fluid">
 
-            <!-- END SECTION INFO -->
+                <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- start SECTION INFO   -->
+    <section class="section_info">
+        <div class="container container_illustra_2">
+            <div class="container-fluid" style="background-color: #ff0000; color:blue;">
+                <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
+
+            </div>
+            <div class="container-fluid illustra_2">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- END SECTION INFO -->
 
 
-            <!-- start section 2 -->
-            <section class="section_info">
-                <div class="container container_illustra_3">
-                    <div class="container-fluid illustra_3">
-                        
-                    </div>                  
-                    <div class="container-fluid">
-                        <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
-                        
-                    </div>
-                </div>
-            </section>
-         
-    
+    <!-- start section 2 -->
+    <section class="section_info">
+        <div class="container container_illustra_3">
+            <div class="container-fluid illustra_3">
+
+            </div>
+            <div class="container-fluid">
+                <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
+
+            </div>
+        </div>
+    </section>
+
+
     <!-- start FOOTER -->
 
     <footer>
@@ -108,9 +109,7 @@ include('includes/config.php');
 
         <div id="instructions" class="footer">
 
-            <video id="my_video_1" class="video-js vjs-default-skin" width="70%" height="100vh" controls preload="none"
-                poster='http://video-js.zencoder.com/oceans-clip.jpg'
-                data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+            <video id="my_video_1" class="video-js vjs-default-skin" width="70%" height="100vh" controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg' data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
                 <source src="https://www.youtube.com/watch?v=GylToGfe9gA" type='video/mp4' />
                 <source src="https://www.youtube.com/watch?v=AgYpigGoGDA" type='video/webm' />
             </video>
@@ -123,22 +122,18 @@ include('includes/config.php');
             <h2>HOW TO USE:</h2>
             <ol>
                 <li>Ecoles doctorales
-                    </li>
-                    <li>   Laboratoires
-                       </li>
+                </li>
+                <li> Laboratoires
+                </li>
                 <li> Groupes et Equipes de recherche
-                    </li>
+                </li>
                 <li>Publications
                     Séminaires, Congrès , colloques et conférences
-                    Thèses soutenus et soutenance à venir <a
-                        href="https://univ-fhb.edu.ci/">Newsletters inclus</a></li>
+                    Thèses soutenus et soutenance à venir <a href="https://univ-fhb.edu.ci/">Newsletters inclus</a></li>
             </ol>
 
             <div class="copyright">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2362.0411283713024!2d-3.987645685510468!3d5.345944986173487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb5e77ff6589%3A0xd1513dc275b81e13!2sUFR%20MI%20Fili%C3%A8res%20Professionalis%C3%A9es%20MIAGE-GI!5e0!3m2!1sfr!2sci!4v1652964878980!5m2!1sfr!2sci"
-                    width="100%" height="600" style="border:0; border-radius: 10px; background-position: fixed;"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2362.0411283713024!2d-3.987645685510468!3d5.345944986173487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb5e77ff6589%3A0xd1513dc275b81e13!2sUFR%20MI%20Fili%C3%A8res%20Professionalis%C3%A9es%20MIAGE-GI!5e0!3m2!1sfr!2sci!4v1652964878980!5m2!1sfr!2sci" width="100%" height="600" style="border:0; border-radius: 10px; background-position: fixed;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <h5><em>By Upcookie</em></h5>
             </div>
             <div class="footer-list">
@@ -154,17 +149,17 @@ include('includes/config.php');
         </div>
 
     </footer>
-  
-    
+
+
 </body>
 <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap-select.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.dataTables.min.js"></script>
-  <script src="js/dataTables.bootstrap.min.js"></script>
-  <script src="js/Chart.min.js"></script>
-  <script src="js/fileinput.js"></script>
-  <script src="js/chartData.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/fileinput.js"></script>
+<script src="js/chartData.js"></script>
+<script src="js/main.js"></script>
 
 </html>

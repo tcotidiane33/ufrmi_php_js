@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars($_POST['password']);
 
     //preparation de la requette d'insertion
-    $insert = $conn->prepare('INSERT INTO users(email,password)
+    $insert = $mysqli->prepare('INSERT INTO users(email,password)
                              VALUES(?, ?)');
 
     //Execution de la requette      

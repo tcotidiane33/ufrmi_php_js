@@ -1,146 +1,121 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Client :  127.0.0.1
+-- Généré le :  Mer 08 Juin 2022 à 10:08
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
+--
+-- Base de données :  `tp`
+--
 
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `composer`
+--
 
-/*==============================================================*/
-/* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  08/06/2022 16:06:14                      */
-/*==============================================================*/
+CREATE TABLE IF NOT EXISTS `composer` (
+  `note` int(11) NOT NULL,
+  `matricule` varchar(20) NOT NULL,
+  `id_matiere` int(10) NOT NULL,
+  PRIMARY KEY (`matricule`,`id_matiere`),
+  KEY `id_matiere` (`id_matiere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-drop table if exists APPARTENIR;
+--
+-- Structure de la table `etudiant`
+--
 
-drop table if exists CLIENT;
+CREATE TABLE IF NOT EXISTS `etudiant` (
+  `matricule` varchar(20) NOT NULL,
+  `nom` varchar(20) DEFAULT NULL,
+  `prenom` varchar(20) DEFAULT NULL,
+  `id_niveau` int(11) DEFAULT NULL,
+  `id_filiere` int(11) DEFAULT NULL,
+  PRIMARY KEY (`matricule`),
+  KEY `FK_Etudiant` (`id_niveau`),
+  KEY `fk_id_filiere` (`id_filiere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists COMMUNE;
+-- --------------------------------------------------------
 
-drop table if exists CONTRAT;
+--
+-- Structure de la table `filiere`
+--
 
-drop table if exists FACTURE;
+CREATE TABLE IF NOT EXISTS `filiere` (
+  `id_filiere` int(11) NOT NULL,
+  `libelle_filiere` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_filiere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists PANNEAU;
+--
+-- Contenu de la table `filiere`
+--
 
-drop table if exists REGLEMENT;
+INSERT INTO `filiere` (`id_filiere`, `libelle_filiere`) VALUES
+(1, 'matthematique'),
+(2, 'science informatique'),
+(3, 'mecanique'),
+(4, 'miage'),
+(5, 'actuariat');
 
-drop table if exists TYPE_REGLEMENT;
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table : APPARTENIR                                           */
-/*==============================================================*/
-create table APPARTENIR
-(
-   NUMCONT              varchar(256) not null,
-   NUMPAN               varchar(256) not null,
-   primary key (NUMCONT, NUMPAN)
-);
+--
+-- Structure de la table `matiere`
+--
 
-/*==============================================================*/
-/* Table : CLIENT                                               */
-/*==============================================================*/
-create table CLIENT
-(
-   NUMCLI               varchar(256) not null,
-   CODECOM              varchar(256) not null,
-   RAISONSOCIALECLI     char(256),
-   TELCLI               text,
-   ADRESSEPOSTALECLI    text,
-   EMAILCLI             text,
-   primary key (NUMCLI)
-);
+CREATE TABLE IF NOT EXISTS `matiere` (
+  `id_matiere` int(10) NOT NULL,
+  `libelle_matiere` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_matiere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table : COMMUNE                                              */
-/*==============================================================*/
-create table COMMUNE
-(
-   CODECOM              varchar(256) not null,
-   LIBELLECOM           char(256),
-   primary key (CODECOM)
-);
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table : CONTRAT                                              */
-/*==============================================================*/
-create table CONTRAT
-(
-   NUMCONT              varchar(256) not null,
-   NUMFACT              varchar(256) not null,
-   NUMCLI               varchar(256) not null,
-   DATESIGNATURECONT    date,
-   primary key (NUMCONT)
-);
+--
+-- Structure de la table `niveau`
+--
 
-/*==============================================================*/
-/* Table : FACTURE                                              */
-/*==============================================================*/
-create table FACTURE
-(
-   NUMFACT              varchar(256) not null,
-   DATEFACT             date,
-   primary key (NUMFACT)
-);
+CREATE TABLE IF NOT EXISTS `niveau` (
+  `id_niveau` int(20) NOT NULL,
+  `libelle_niveau` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_niveau`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table : PANNEAU                                              */
-/*==============================================================*/
-create table PANNEAU
-(
-   NUMPAN               varchar(256) not null,
-   CODECOM              varchar(256) not null,
-   FORMATPAN            int,
-   TYPEPAN              char(256),
-   SITEPAN              char(256),
-   IMAGEPAN             longblob,
-   ETATPAN              char(256),
-   PRIXUNITAIREPAN      float(8,2),
-   primary key (NUMPAN)
-);
+--
+-- Contraintes pour les tables exportées
+--
 
-/*==============================================================*/
-/* Table : REGLEMENT                                            */
-/*==============================================================*/
-create table REGLEMENT
-(
-   NUMREGL              varchar(256) not null,
-   NUMFACT              varchar(256) not null,
-   CODETYPEREG          varchar(256) not null,
-   DATEREGL             date,
-   MONTANTREGL          float(8,2),
-   primary key (NUMREGL)
-);
+--
+-- Contraintes pour la table `composer`
+--
+ALTER TABLE `composer`
+  ADD CONSTRAINT `composer_ibfk_1` FOREIGN KEY (`matricule`) REFERENCES `etudiant` (`matricule`),
+  ADD CONSTRAINT `composer_ibfk_2` FOREIGN KEY (`id_matiere`) REFERENCES `matiere` (`id_matiere`);
 
-/*==============================================================*/
-/* Table : TYPE_REGLEMENT                                       */
-/*==============================================================*/
-create table TYPE_REGLEMENT
-(
-   CODETYPEREG          varchar(256) not null,
-   LIBELLETYPEREG       char(256),
-   primary key (CODETYPEREG)
-);
+--
+-- Contraintes pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+  ADD CONSTRAINT `FK_Etudiant` FOREIGN KEY (`id_niveau`) REFERENCES `niveau` (`id_niveau`),
+  ADD CONSTRAINT `fk_id_filiere` FOREIGN KEY (`id_filiere`) REFERENCES `filiere` (`id_filiere`);
 
-alter table APPARTENIR add constraint FK_APPARTENIR foreign key (NUMCONT)
-      references CONTRAT (NUMCONT) on delete restrict on update restrict;
-
-alter table APPARTENIR add constraint FK_APPARTENIR2 foreign key (NUMPAN)
-      references PANNEAU (NUMPAN) on delete restrict on update restrict;
-
-alter table CLIENT add constraint FK_TROUVER foreign key (CODECOM)
-      references COMMUNE (CODECOM) on delete restrict on update restrict;
-
-alter table CONTRAT add constraint FK_AVOIR foreign key (NUMFACT)
-      references FACTURE (NUMFACT) on delete restrict on update restrict;
-
-alter table CONTRAT add constraint FK_SIGNER foreign key (NUMCLI)
-      references CLIENT (NUMCLI) on delete restrict on update restrict;
-
-alter table PANNEAU add constraint FK_SITUER foreign key (CODECOM)
-      references COMMUNE (CODECOM) on delete restrict on update restrict;
-
-alter table REGLEMENT add constraint FK_CONCERNER foreign key (NUMFACT)
-      references FACTURE (NUMFACT) on delete restrict on update restrict;
-
-alter table REGLEMENT add constraint FK_ETRE foreign key (CODETYPEREG)
-      references TYPE_REGLEMENT (CODETYPEREG) on delete restrict on update restrict;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

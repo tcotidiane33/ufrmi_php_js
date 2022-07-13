@@ -747,13 +747,14 @@ li {
 /* Login page */
 .login-page {
   position: absolute;
-  height: 120%;
+  /*height: 120%;*/
   width: 100%;
+  background-size: cover;
+  background-position: ;
 }
 
 
 /* exemple */
-
 
 
 a {
@@ -878,7 +879,7 @@ transform: translateY(-60px);
 }
 
 .example-1 .wrapper {
-background: url(./assets/kali.jpeg) 20% 1%/cover no-repeat;
+background: url(../assets/kali.jpeg) 20% 1%/cover no-repeat;
 border-radius: 17px;
 padding: 17px;
 /* border:1px solid #00ffbb; */
@@ -976,7 +977,7 @@ top: -10px;
 }
 
 .example-2 .wrapper {
-background: url(./assets/ubuntu.jpeg) center/cover no-repeat;
+background: url(../assets/ubuntu.jpeg) center/cover no-repeat;
 }
 .example-2 .wrapper:hover .menu-content span {
 transform: translate(-50%, -10px);

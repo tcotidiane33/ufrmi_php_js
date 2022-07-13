@@ -58,8 +58,7 @@ include('includes/config.php');
 			    </section>
 			    <!-- END BANNER -->
 			    <!-- START SECTION  -->
-			    <!-- <div class="section body_space"> -->
-			        <!-- <div class="body-section"> -->
+			   
 			            <!-- start section 1  -->
 			            <section class="section_art">
 			                <div class="articles">
@@ -326,7 +325,7 @@ include('includes/config.php');
 			                            <div class="card">
 			                                <div class="card-img-top">
 			                                    <div class="img-article"
-			                                        style="background: url('./assets/pexels-10.jpg') no-repeat center center;">
+			                                        style="background: url('assets/pexels-10.jpg') no-repeat center center;">
 			                                    </div>
 			                                </div>
 			                                <div class="card-body">
@@ -347,7 +346,7 @@ include('includes/config.php');
 			                            <div class="card">
 			                                <div class="card-img-top">
 			                                    <div class="img-article"
-			                                        style="background: url('./assets/logomesrs.png') no-repeat center center;">
+			                                        style="background: url('assets/logomesrs.png') no-repeat center center;">
 			                                    </div>
 			                                </div>
 			                                <div class="card-body biggi">
@@ -366,7 +365,7 @@ include('includes/config.php');
 			                            <div class="card">
 			                                <div class="card-img-top">
 			                                    <div class="img-article"
-			                                        style="background: url('./assets/img-template-8.webp') no-repeat center center;">
+			                                        style="background: url('assets/img-template-8.webp') no-repeat center center;">
 			                                    </div>
 			                                </div>
 			                                <div class="card-body biggi">

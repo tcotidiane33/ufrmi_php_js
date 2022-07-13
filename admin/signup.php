@@ -112,6 +112,14 @@ if (isset($_POST['login'])) {
 						
 
           </div>
+											<div class="footer">
+							  <!-- Description -->
+        <p class="overlay__description my-4 btn-sm text-dark">
+          if you don't have a account 🙏 please <a href="./login.php"><big style="color: ;">🖱 click-Here !</big></a>
+          <strong>We're gonna talk accessibility, too.</strong>
+        </p>
+        <!-- Buttons -->
+						</div>
 					</div>
 				</div>
 			</div>

@@ -40,11 +40,12 @@ include('includes/config.php');
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Dashboard</h2>
+						<h2 class="page-title ">Dashboard</h2>
 
 						<div class="row">
 							<div class="col-md-12">
 								<div class="row">
+									<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex laborum consectetur expedita officia, a magnam. Possimus voluptas, voluptatibus reprehenderit facilis est qui repellendus nisi! A doloribus corrupti non natus eaque asperiores eveniet, illum libero fugiat cupiditate nemo aut consequatur tenetur molestiae voluptatem, tempora possimus atque voluptate omnis culpa? Illum ullam, beatae doloribus aperiam perspiciatis error debitis quaerat unde explicabo pariatur voluptatibus ratione fugit quidem saepe iusto aspernatur voluptatem? Amet, expedita recusandae voluptatum beatae cupiditate modi aperiam illo placeat suscipit hic qui ab velit. Neque natus eos modi. Natus, tempore officia. Recusandae odio accusantium omnis cum iusto quod quasi saepe quae, eius nisi veniam similique aspernatur ab repellat consequuntur nesciunt optio, magni laboriosam atque pariatur eum unde? Modi vitae sunt ex!/p>
 
 
 								</div>

@@ -9,9 +9,9 @@ body {
   /* max-width: 1920px;
   display: grid;*/
   overflow-x: hidden;
-  min-height: 100vh;
+  /* min-height: 100vh;
   width: 100vw;
-  place-items: center;
+  place-items: center; */
   padding: 1rem;
   font-family: var(--font-family);
   color: var(--dark-color);
@@ -433,8 +433,8 @@ big {
   width: 100%;
   height: 100vh;
   background: url("../assets/pexel-2.jpg") center/cover fixed;
-  animation: bg-change 25s infinite ease-in forwards;
-  transition: all 0.35s ease-in;
+  animation: bg-change 30s infinite ease-in forwards;
+  transition: all 0.45s ease-in;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

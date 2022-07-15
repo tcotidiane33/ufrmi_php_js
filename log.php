@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <header class="header_log">
   <div class="backgroung">
-    <img src="./assets/pexels-7.jpg" style="left:0; top:0; position: absolute; z-index: -1; background-size: cover; height: 120vh; width: 100vw " alt="" srcset="">
+    <img src="./assets/pexels-7.jpg" style="left:0; top:0; position: absolute; z-index: -1; background-size: cover; width: 100vw " alt="" srcset="">
   </div>
       <!-- Canvas -->
 <canvas class="orb-canvas"></canvas>

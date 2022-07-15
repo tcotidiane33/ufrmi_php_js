@@ -75,7 +75,8 @@ include('includes/config.php');
     <!-- start SECTION INFO   -->
     <section class="section_info">
         <div class="container container_illustra_2">
-            <div class="container-fluid" style="background-color: #ff0000; color:blue;">
+            <div class="container-fluid" style="    background-color: #f6efef;
+    color: black;">
                 <p class="paragraph block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam dolore velit quibusdam cum error, ab aut omnis dolor ipsa optio deleniti voluptatibus nisi necessitatibus et aperiam ex quasi culpa reprehenderit ducimus, dolorum voluptatem odio laboriosam nostrum. Repudiandae, voluptas laudantium?</p>
 
             </div>

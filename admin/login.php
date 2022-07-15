@@ -14,27 +14,26 @@ if (isset($_POST['login'])) {
 $errorMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  //recuperation et verification des donnees
-  if ((!empty($_POST['email']) && !empty($_POST['password']))) {
+	//recuperation et verification des donnees
+	if ((!empty($_POST['email']) && !empty($_POST['password']))) {
 
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
+		$email = htmlspecialchars($_POST['email']);
+		$password = htmlspecialchars($_POST['password']);
 
-    //preparation de la requette d'insertion
-    $insert = $mysqli->prepare('INSERT INTO users(email,password)
+		//preparation de la requette d'insertion
+		$insert = $mysqli->prepare('INSERT INTO users(email,password)
                              VALUES(?, ?)');
 
-    //Execution de la requette      
-    $insert->execute(array($email, $password));
+		//Execution de la requette      
+		$insert->execute(array($email, $password));
 
-    //redirection ver filiere.php
-    // header("location:filiere.php");
-    echo "string";
-  }
-  else {
-    $errorMsg = "Veuillez renseigner le champs";
-    echo $errorMsg;
-  }
+		//redirection ver filiere.php
+		// header("location:filiere.php");
+		echo "string";
+	} else {
+		$errorMsg = "Veuillez renseigner le champs";
+		echo $errorMsg;
+	}
 }
 ?>
 
@@ -59,56 +58,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-</head >
+</head>
+
 <body>
 
-<div class="login-page bk-img" style="background-image: url(img/login-bg.jpg);">
-	<div class="form-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<!-- Title -->
-    <h1 class="overlay__title text-center text-bold text-light mt-4x">
-      Bienvenue sur le  site de L'UFR MI 
-      <span class="text-gradient">Université Felix Félix-Houphouët-Boigny </span> de Cocody
-    </h1>
-	
-					<div class="well row pt-2x pb-3x bk-light">
-						<div class="col-md-8 form-login col-md-offset-2">
+	<div class="login-page bk-img" style="background: url(../assets/pexels-1.jpg) center/cover fixed; height:130vh;">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<!-- Title -->
+						<h1 class="overlay__title text-center text-bold text-light mt-4x">
+							Bienvenue sur le site de L'UFR MI
+							<span class="text-gradient">Université Felix Félix-Houphouët-Boigny </span> de Cocody
+						</h1>
 
-							<form action="" class="mt" method="post">
-								<label for="" class="text-uppercase text-sm">Your Username or Email</label>
-								<input type="text" placeholder="Username" name="username" class="form-control mb">
-								<label for="" class="text-uppercase text-sm">Password</label>
-								<input type="password" placeholder="Password" name="password" class="form-control mb">
-							</form>
-							<input type="submit" name="login" class="btn myBtnLog btn-primary btn-block" value="login">
-							<!-- <input type="submit" name="login" class="btn myBtnLogs btn-primary btn-block" value="login test"> -->
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 form-login col-md-offset-2">
+
+								<form action="" class="mt" method="post">
+									<label for="" class="text-uppercase text-sm">Your Username or Email</label>
+									<input type="text" placeholder="Username" name="username" class="form-control mb">
+									<label for="" class="text-uppercase text-sm">Password</label>
+									<input type="password" placeholder="Password" name="password" class="form-control mb">
+								</form>
+								<input type="submit" name="login" class="btn myBtnLog btn-primary btn-block" value="login">
+								<!-- <input type="submit" name="login" class="btn myBtnLogs btn-primary btn-block" value="login test"> -->
+							</div>
+
 						</div>
-						    
-					</div>
 						<div class="footer">
-							  <!-- Description -->
-        <p class="overlay__description my-4 btn-sm text-light">
-          if you don't have a account 🙏 please <a href="./signup.php"><big style="color: ;">🖱 click-Here !</big></a>
-          <strong>We're gonna talk accessibility, too.</strong>
-        </p>
-        <!-- Buttons -->
+							<!-- Description -->
+							<p class="overlay__description my-4 btn-sm text-light">
+								if you don't have a account 🙏 please <a href="./signup.php"><big style="color: ;">🖱 click-Here !</big></a>
+								<strong>We're gonna talk accessibility, too.</strong>
+							</p>
+							<!-- Buttons -->
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
-<script src="js/dataTables.bootstrap.min.js"></script>
-<script src="js/Chart.min.js"></script>
-<script src="js/fileinput.js"></script>
-<script src="js/chartData.js"></script>
-<script src="js/main.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 <div class="foot">

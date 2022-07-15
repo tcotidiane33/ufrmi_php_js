@@ -1,24 +1,24 @@
 <nav class="ts-sidebar">
-			<ul class="ts-sidebar-menu">
-			
-				<li class="ts-label">Main</li>
-				<li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-					<li><a href="#"><i class="fa fa-files-o"></i> Courses</a>
-					<ul>
-						<li><a href="add-courses.php">Add Command</a></li>
-						<li><a href="manage-courses.php">Manage Command</a></li>
-					</ul>
-				</li>
-					<li><a href="#"><i class="fa fa-desktop"></i> Commands</a>
-					<ul>
-						<li><a href="create-room.php">Add a Room</a></li>
-						<li><a href="manage-rooms.php">Manage Rooms</a></li>
-					</ul>
-				</li>
+	<ul class="ts-sidebar-menu">
 
-				<li><a href="registration.php"><i class="fa fa-user"></i>Panneau Registration</a></li>
-				<li><a href="manage-panneau.php"><i class="fa fa-users"></i>Manage Panneau</a></li>
-				<!-- <li><a href="access-log.php"><i class="fa fa-file"></i>User Access logs</a></li> -->
+		<li class="ts-label">Menu</li>
+		<li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+		<li><a href="#"><i class="fa fa-files-o"></i>Evenements</a>
+			<ul>
+				<li><a href="compo.php">Composition</a></li>
+				<li><a href="result.php">Resultats</a></li>
+			</ul>
+		</li>
+		<li><a href="#"><i class="fa fa-desktop"></i>Emplois du temps </a>
+			<ul>
+				<li><a href="semestre1.php">Semestre 1</a></li>
+				<li><a href="semestre2.php">Semestre 2</a></li>
+			</ul>
+		</li>
 
-			
-		</nav>
+		<li><a href="registration.php"><i class="fa fa-user"></i>Enregistrer une nouvelle donnée</a></li>
+		<li><a href="group.php"><i class="fa fa-users"></i>Projet de Groupe</a></li>
+		<!-- <li><a href="access-log.php"><i class="fa fa-file"></i>User Access logs</a></li> -->
+
+
+</nav>

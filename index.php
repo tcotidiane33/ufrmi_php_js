@@ -36,16 +36,64 @@ include('includes/config.php');
 	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 
 	<script type="text/javascript">
+		// PROMOTION HEADER
+		const target = document.getElementById("target");
+		let array = [
+			"LMD",
+			"LICENCE ",
+			"MASTER",
+			"DOCTORAT",
+			"ACTUARIAT",
+			"MIAGE",
+			"MATHEMATIQUES",
+			"MECANIQUE",
+			"INFORMATIQUE",
+			"BDGL",
+			"PROBABILITÉ",
+		];
+		let wordIndex = 0;
+		let letterIndex = 0;
 
+		const createLetter = () => {
+			const letter = document.createElement("span");
+			target.appendChild(letter);
+
+			letter.classList.add("letter");
+			letter.style.opacity = "0";
+			letter.style.animation = "anim 5s ease forwards";
+			letter.textContent = array[wordIndex][letterIndex];
+
+			setTimeout(() => {
+				letter.remove();
+			}, 2000);
+		};
+
+		const loop = () => {
+			setTimeout(() => {
+				if (wordIndex >= array.length) {
+					wordIndex = 0;
+					letterIndex = 0;
+					loop();
+				} else if (letterIndex < array[wordIndex].length) {
+					createLetter();
+					letterIndex++;
+					loop();
+				} else {
+					letterIndex = 0;
+					wordIndex++;
+					setTimeout(() => {
+						loop();
+					}, 2000);
+				}
+			}, 80);
+		};
+		loop();
 	</script>
 </head>
 
 <body>
 	<?php include('includes/header.php'); ?>
 	<div class="wrapper">
-
-
-
 		<div class="content-wrapper">
 			<div class="container-fluid">
 				<!-- START BANNER  -->
@@ -479,58 +527,7 @@ include('includes/config.php');
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js">
-		// PROMOTION HEADER
-		const target = document.getElementById("target");
-		let array = [
-			"LMD",
-			"LICENCE ",
-			"MASTER",
-			"DOCTORAT",
-			"ACTUARIAT",
-			"MIAGE",
-			"MATHEMATIQUES",
-			"MECANIQUE",
-			"INFORMATIQUE",
-			"BDGL",
-			"PROBABILITÉ",
-		];
-		let wordIndex = 0;
-		let letterIndex = 0;
 
-		const createLetter = () => {
-			const letter = document.createElement("span");
-			target.appendChild(letter);
-
-			letter.classList.add("letter");
-			letter.style.opacity = "0";
-			letter.style.animation = "anim 5s ease forwards";
-			letter.textContent = array[wordIndex][letterIndex];
-
-			setTimeout(() => {
-				letter.remove();
-			}, 2000);
-		};
-
-		const loop = () => {
-			setTimeout(() => {
-				if (wordIndex >= array.length) {
-					wordIndex = 0;
-					letterIndex = 0;
-					loop();
-				} else if (letterIndex < array[wordIndex].length) {
-					createLetter();
-					letterIndex++;
-					loop();
-				} else {
-					letterIndex = 0;
-					wordIndex++;
-					setTimeout(() => {
-						loop();
-					}, 2000);
-				}
-			}, 80);
-		};
-		loop();
 	</script>
 </body>
 

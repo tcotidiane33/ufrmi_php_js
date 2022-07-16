@@ -30,10 +30,9 @@ include('includes/config.php');
 </head>
 
 <body>
-<?php include("includes/header.php");?>
+	<?php include("includes/header.php"); ?>
 
 	<div class="ts-main-content">
-		<?php include("includes/sidebar.php");?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
@@ -64,7 +63,7 @@ include('includes/config.php');
 											<div class="panel-body bk-success text-light">
 												<div class="stat-panel text-center">
 
-												<div class="stat-panel-number h1 ">My Room</div>
+													<div class="stat-panel-number h1 ">My Room</div>
 
 												</div>
 											</div>
@@ -96,35 +95,46 @@ include('includes/config.php');
 	<script src="js/main.js"></script>
 
 	<script>
+		window.onload = function() {
 
-	window.onload = function(){
+			// Line chart from swirlData for dashReport
+			var ctx = document.getElementById("dashReport").getContext("2d");
+			window.myLine = new Chart(ctx).Line(swirlData, {
+				responsive: true,
+				scaleShowVerticalLines: false,
+				scaleBeginAtZero: true,
+				multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+			});
 
-		// Line chart from swirlData for dashReport
-		var ctx = document.getElementById("dashReport").getContext("2d");
-		window.myLine = new Chart(ctx).Line(swirlData, {
-			responsive: true,
-			scaleShowVerticalLines: false,
-			scaleBeginAtZero : true,
-			multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-		});
+			// Pie Chart from doughutData
+			var doctx = document.getElementById("chart-area3").getContext("2d");
+			window.myDoughnut = new Chart(doctx).Pie(doughnutData, {
+				responsive: true
+			});
 
-		// Pie Chart from doughutData
-		var doctx = document.getElementById("chart-area3").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Pie(doughnutData, {responsive : true});
+			// Dougnut Chart from doughnutData
+			var doctx = document.getElementById("chart-area4").getContext("2d");
+			window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {
+				responsive: true
+			});
 
-		// Dougnut Chart from doughnutData
-		var doctx = document.getElementById("chart-area4").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {responsive : true});
-
-	}
+		}
 	</script>
 
 </body>
 
-<div class="foot"><footer>
-<p> Brought To You By <a href="https://github.com/tcotidiane33">EUREKA DOJO</p>
-</footer> </div>
+<div class="foot">
+	<footer>
+		<p> Brought To You By <a href="https://github.com/tcotidiane33">EUREKA DOJO</p>
+	</footer>
+</div>
 
 
-<style> .foot{text-align: center; border: 1px solid black;}</style>
+<style>
+	.foot {
+		text-align: center;
+		border: 1px solid black;
+	}
+</style>
+
 </html>

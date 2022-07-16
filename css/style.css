@@ -670,6 +670,7 @@ li {
   position: fixed;
   width: 100%;
   top: 0;
+  height: 88px;
 }
 
 .brand .logo {
@@ -828,9 +829,10 @@ li {
 
 .ts-sidebar-menu a {
   display: block;
-  text-decoration: none;
   padding: 12px 15px;
   color: #fff;
+  text-decoration: none;
+
 }
 
 .ts-sidebar-menu li {

@@ -1,122 +1,4 @@
-$(document).ready(function () {
 
-  $(".ts-sidebar-menu li a").each(function () {
-    if ($(this).next().length > 0) {
-      $(this).addClass("parent");
-    };
-  })
-  var menux = $('.ts-sidebar-menu li a.parent');
-  $('<div class="more"><i class="fa fa-angle-down"></i></div>').insertBefore(menux);
-  $('.more').click(function () {
-    $(this).parent('li').toggleClass('open');
-  });
-  $('.parent').click(function (e) {
-    e.preventDefault();
-    $(this).parent('li').toggleClass('open');
-  });
-  $('.menu-btn').click(function () {
-    $('nav.ts-sidebar').toggleClass('menu-open');
-  });
-
-
-  $('#zctb').DataTable();
-
-
-  $("#input-43").fileinput({
-    allowedFileExtensions: ["zip", "rar", "gz", "tgz"],
-    elErrorContainer: "#errorBlock43"
-    // you can configure `msgErrorClass` and `msgInvalidFileExtension` as well
-  });
-
-});
-
-
-const btnCli = document.querySelector(".myBtnCli");
-const btnCom = document.querySelector(".myBtnCom");
-const btnCon = document.querySelector(".myBtnCon");
-const btnFac = document.querySelector(".myBtnFac");
-const btnPan = document.querySelector(".myBtnPan");
-const btnReg = document.querySelector(".myBtnReg");
-const btnTreg = document.querySelector(".myBtnTreg");
-
-
-btnCli.onclick = () => {
-  console.log("echo client ..");
-  location.href = "client.php";
-
-}
-btnCli.onclick = () => {
-  console.log("echo client ..");
-  location.href = "client.php";
-
-}
-btnCom.onclick = () => {
-  console.log("echo commune ..");
-  location.href = "commune.php";
-
-}
-btnCon.onclick = () => {
-  console.log("echo contrat ..");
-  location.href = "contrat.php";
-
-}
-btnFac.onclick = () => {
-  console.log("echo facture ..");
-  location.href = "facture.php";
-
-}
-
-btnPan.onclick = () => {
-  console.log("echo panneau ..");
-  location.href = "panneau.php";
-
-}
-
-btnReg.onclick = () => {
-  console.log("echo reglement ..");
-  location.href = "reglement.php";
-
-}
-btnTreg.onclick = () => {
-  console.log("echo Type reglement ..");
-  location.href = "typereglement.php";
-
-}
-
-
-
-
-//  //  /login page admin without control
-const btnLog = document.querySelector(".form-login .myBtnLog");
-
-// log
-btnLog.onclick = () => {
-  console.log("echo page admin is open");
-  location.href = "/admin/admin-profile.php";
-  // alert('echo reply...');
-}
-
-
-
-// nez 
-
-$(function () {
-  var $refreshButton = $('#refresh');
-  var $results = $('#css_result');
-
-  function refresh() {
-    var css = $('style.cp-pen-styles').text();
-    $results.html(css);
-  }
-
-  refresh();
-  $refreshButton.click(refresh);
-
-  // Select all the contents when clicked
-  $results.click(function () {
-    $(this).select();
-  });
-});
 
 //navbar 
 /* When the user clicks on the button,
@@ -210,49 +92,49 @@ loop();
 // nav-right
 
 
-"use strict";
+// "use strict";
 
-const body = document.body;
-const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
-const menu = body.querySelector(".menu");
-const menuItems = menu.querySelectorAll(".menu__item");
-const menuBorder = menu.querySelector(".menu__border");
-let activeItem = menu.querySelector(".active");
+// const body = document.body;
+// const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
+// const menu = body.querySelector(".menu");
+// const menuItems = menu.querySelectorAll(".menu__item");
+// const menuBorder = menu.querySelector(".menu__border");
+// let activeItem = menu.querySelector(".active");
 
-function clickItem(item, index) {
+// function clickItem(item, index) {
 
-  menu.style.removeProperty("--timeOut");
+//   menu.style.removeProperty("--timeOut");
 
-  if (activeItem == item) return;
+//   if (activeItem == item) return;
 
-  if (activeItem) {
-    activeItem.classList.remove("active");
-  }
-
-
-  item.classList.add("active");
-  body.style.backgroundColor = bgColorsBody[index];
-  activeItem = item;
-  offsetMenuBorder(activeItem, menuBorder);
+//   if (activeItem) {
+//     activeItem.classList.remove("active");
+//   }
 
 
-}
+//   item.classList.add("active");
+//   body.style.backgroundColor = bgColorsBody[index];
+//   activeItem = item;
+//   offsetMenuBorder(activeItem, menuBorder);
 
-function offsetMenuBorder(element, menuBorder) {
 
-  const offsetActiveItem = element.getBoundingClientRect();
-  const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth - offsetActiveItem.width) / 2) + "px";
-  menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
+// }
 
-}
+// function offsetMenuBorder(element, menuBorder) {
 
-offsetMenuBorder(activeItem, menuBorder);
+//   const offsetActiveItem = element.getBoundingClientRect();
+//   const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth - offsetActiveItem.width) / 2) + "px";
+//   menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
 
-menuItems.forEach((item, index) => {
+// }
 
-  item.addEventListener("click", () => clickItem(item, index));
+// offsetMenuBorder(activeItem, menuBorder);
 
-})
+// menuItems.forEach((item, index) => {
+
+//   item.addEventListener("click", () => clickItem(item, index));
+
+// })
 
 window.addEventListener("resize", () => {
   offsetMenuBorder(activeItem, menuBorder);
@@ -262,6 +144,3 @@ window.addEventListener("resize", () => {
 
 
 // GALERIE
-/
-
-

@@ -16,7 +16,7 @@ include('includes/config.php');
 	<title>ufrmi</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">>
+	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-social.css">
 	<link rel="stylesheet" href="css/bootstrap-select.css">
 	<link rel="stylesheet" href="css/fileinput.min.css">
@@ -99,8 +99,8 @@ include('includes/config.php');
 				<!-- START BANNER  -->
 				<section class="section">
 					<div class="banner promotion background">
-						<h3 class="up "><big><strong class="strong ">BIENVENUE</strong></big> A L'UFR MATHEMATIQUES ET <h1 class="big">INFORMATIQUE</h1>
-						</h3>
+						<h1 class="up "><big><strong class="strong ">BIENVENUE</strong></big> A L'UFR MATHEMATIQUES ET <h1 class="big">INFORMATIQUE</h1>
+						</h1>
 						<h3 class="cookie " id="target"></h3>
 					</div>
 				</section>

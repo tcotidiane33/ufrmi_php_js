@@ -412,7 +412,6 @@ big {
 
 .promotion {
   min-height: 50vh;
-
   font-family: "Josefin Sans", sans-serif;
   display: grid;
   /* grid-template-columns: 50%; */
@@ -420,7 +419,7 @@ big {
   place-items: grid;
   justify-content: center;
   overflow: hidden;
-  font-size: 6rem;
+  font-size: 4rem;
   transition: 2s all;
   font-weight: bolder;
   -webkit-transition: 2s all;

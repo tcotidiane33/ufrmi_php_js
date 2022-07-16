@@ -44,7 +44,7 @@
 			<?php
 			} ?>
 			<div class="connexion" style="text-align: end;text-shadow: 2px 5px 3px black;font-size: 3rem;font-weight: bold;">
-				<li class="ts-label header-label"><a href="admin/login.php">Connexion</li>
+				<li class="ts-label header-label"><a href="admin/login.php">Connexion</a></li>
 			</div>
 		</ul>
 	</nav>

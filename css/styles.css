@@ -392,6 +392,7 @@ html *::after {
   border-radius: 50px;
   perspective: 200px;
   opacity: 80%;
+  margin: 0 2px;
   text-overflow: unset;
   text-shadow: 2px 3px 2px #ff3300;
   width: 990px;

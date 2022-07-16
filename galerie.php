@@ -16,7 +16,7 @@ include('includes/config.php');
     <title>ufrmi_Galerie</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">>
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-social.css">
     <link rel="stylesheet" href="css/bootstrap-select.css">
     <link rel="stylesheet" href="css/fileinput.min.css">

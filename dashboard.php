@@ -30,8 +30,8 @@ include('includes/config.php');
 </head>
 
 <body>
+	
 	<?php include("includes/header.php"); ?>
-
 	<div class="ts-main-content">
 		<div class="content-wrapper">
 			<div class="container-fluid">

@@ -50,9 +50,9 @@ include('includes/config.php');
     <!-- START BANNER  -->
     <section class="section">
         <div class="banner promotion background">
-            <h3 class="up "><big><strong class="strong ">UFR MI</strong></big>
+            <h1 class="up "><big><strong class="strong ">UFR MI</strong></big>
                 <h1 class="big"> GALERIE </h1>
-            </h3>
+            </h1>
             <h3 class="cookie " id="target_galerie"></h3>
         </div>
 

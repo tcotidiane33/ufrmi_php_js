@@ -58,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -69,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<div class="col-md-6 col-md-offset-3">
 						<!-- Title -->
 						<h1 class="overlay__title text-center text-bold text-light mt-4x">
-							Bienvenue sur le site de L'UFR MI
+							Bienvenue sur le site de L'UFR MI De
 							<span class="text-gradient">Université Felix Félix-Houphouët-Boigny </span> de Cocody
 						</h1>
 

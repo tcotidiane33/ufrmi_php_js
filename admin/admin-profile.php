@@ -20,14 +20,14 @@ include('includes/pdoconfig.php');
 	<title>Admin Profile</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">>
+	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-social.css">
 	<link rel="stylesheet" href="css/bootstrap-select.css">
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
-	<script type="text/javascript" src="js/validation.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3-jquery.min.js"></script>
+	<script type="text/javascript" src="../js/validation.min.js"></script>
 	<script type="text/javascript">
 		function valid() {
 
@@ -50,24 +50,24 @@ include('includes/pdoconfig.php');
 			<div class="container-fluid ">
 
 				<div class="row">
-					<div class="col-md-12 admin-profil" >
-						<img src="/images/16165254885732_image6.jpg" alt="bg" >
+					<div class="col-md-12 admin-profil">
+						<img src="/images/16165254885732_image6.jpg" alt="bg">
 						<h2 class="page-title">Admin Profile</h2>
 						<?php
-						
+
 						?>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="panel panel-default">
-										<div class="panel-heading">Admin profile details</div>
-										<div class="panel-body">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dicta repudiandae maxime reiciendis ea in soluta quo. Aliquid ex consectetur sunt incidunt officiis, est excepturi dolores iusto vitae neque quidem?</p>
-									<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quod in facere a!</h1>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="panel panel-default">
+									<div class="panel-heading">Admin profile details</div>
+									<div class="panel-body">
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dicta repudiandae maxime reiciendis ea in soluta quo. Aliquid ex consectetur sunt incidunt officiis, est excepturi dolores iusto vitae neque quidem?</p>
+										<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quod in facere a!</h1>
 
 									</div>
 								</div>
 							</div>
-							</div>
+						</div>
 
 
 

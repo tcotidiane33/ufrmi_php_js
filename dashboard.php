@@ -30,7 +30,7 @@ include('includes/config.php');
 </head>
 
 <body>
-	
+
 	<?php include("includes/header.php"); ?>
 	<div class="ts-main-content">
 		<div class="content-wrapper">
@@ -55,7 +55,7 @@ include('includes/config.php');
 
 												</div>
 											</div>
-											<a href="my-profile.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
+											<a href="admin/login.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -67,7 +67,7 @@ include('includes/config.php');
 
 												</div>
 											</div>
-											<a href="room-details.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
+											<a href="admin/login.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 

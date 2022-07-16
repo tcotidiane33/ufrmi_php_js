@@ -26,7 +26,6 @@ include('includes/config.php');
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
 
-
 </head>
 
 <body>
@@ -73,7 +72,6 @@ include('includes/config.php');
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-
 	<script>
 		window.onload = function() {
 

@@ -163,7 +163,6 @@ include('includes/config.php');
 					</div>
 				</section>
 
-
 				<!-- start SECTION INFO   -->
 				<section class="section_info">
 					<div class="bg-with directeur-space">
